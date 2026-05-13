@@ -44,7 +44,9 @@ controls:
   apple_settings:
     configuration_profiles:
       # … e.g.
-      # - path: ../lib/ios/declaration-profiles/Passcode settings.json
+      - path: ../platforms/ios/configuration-profiles/passcode-settings.json
+        labels_exclude_any:
+          - C-Suite
       # - path: ../lib/ios/configuration-profiles/self-service.mobileconfig
   android_settings:
     configuration_profiles:
@@ -64,9 +66,9 @@ controls:
   # ios_updates:
   #   deadline: "2030-04-01"
   #   minimum_version: "18.5"
-  # ipados_updates:
-  #   deadline: "2030-04-01"
-  #   minimum_version: "18.5"
+  ipados_updates:
+    deadline: "2026-07-30"
+    minimum_version: "26.2"
 
 ###########################################################
 # Apps to make available from the Apple App Store or Google Play
