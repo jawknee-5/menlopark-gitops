@@ -1,4 +1,4 @@
-- name: Department - Engineer
+- name: Department - Engineering
 description: Host belonging to memeber of the Engineering department
 label_membership_type: host_vitals
 criteria:
