@@ -1,0 +1,48 @@
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+# pilots.yml
+#
+# Use this fleet manifest to configure controls, software,
+# automations, policies, and reports for the "Pilots" fleet.
+#
+# > Note: By convention, the "🧪 Pilots" fleet is where
+# > early-adopter devices live so new configuration profiles,
+# > policies, and software rollouts can be validated against
+# > a small group before being promoted to "💻 Workstations".
+#
+# To see all supported options, check out:
+#   • https://fleetdm.com/docs/configuration/yaml-files
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+name: "🧪 Pilots"
+controls:
+  apple_settings:
+    configuration_profiles:
+      - paths: ../platforms/macos/declaration-profiles/*.json
+  windows_settings:
+    configuration_profiles:
+      - paths: ../platforms/windows/configuration-profiles/*.xml
+
+  enable_disk_encryption: true
+  enable_recovery_lock_password: true
+
+  scripts:
+    - paths: ../platforms/macos/scripts/*.sh
+    - paths: ../platforms/windows/scripts/*.ps1
+    - paths: ../platforms/linux/scripts/*.sh
+
+reports:
+  - paths: ../platforms/all/reports/*.yml
+  - paths: ../platforms/macos/reports/*.yml
+  - paths: ../platforms/windows/reports/*.yml
+  - paths: ../platforms/linux/reports/*.yml
+
+policies:
+  - paths: ../platforms/macos/policies/*.yml
+  - paths: ../platforms/windows/policies/*.yml
+  - paths: ../platforms/linux/policies/*.yml
+
+software:
+  fleet_maintained_apps:
+  packages:
+  app_store_apps:
