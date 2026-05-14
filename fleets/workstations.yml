@@ -170,24 +170,40 @@ software:
     - slug: 1password/darwin
       self_service: true
     # macOS apps
-    # …
-    # - slug: slack/darwin # Slack for macOS
-    #   self_service: true
-    #   setup_experience: true
-    #   categories:
-    #     - Communication
-    #     - Productivity
+    - slug: zoom/darwin
+      self_service: true
+      categories:
+        - Communication
+    - slug: google-chrome/darwin
+      self_service: true
+      categories:
+        - Browsers
+    - slug: slack/darwin
+      self_service: true
+      categories:
+        - Communication
+        - Productivity
 
     # Windows apps
-    # …
-    # - slug: slack/windows # Slack for Windows
-    #   self_service: true
-    #   setup_experience: true
-    #   categories:
-    #     - Productivity
-    #     - Communication
-    #   labels_include_any:
-    #     - "x86-based Windows hosts"
+    - slug: zoom/windows
+      self_service: true
+      categories:
+        - Communication
+      labels_include_any:
+        - "x86-based Windows hosts"
+    - slug: google-chrome/windows
+      self_service: true
+      categories:
+        - Browsers
+      labels_include_any:
+        - "x86-based Windows hosts"
+    - slug: slack/windows
+      self_service: true
+      categories:
+        - Communication
+        - Productivity
+      labels_include_any:
+        - "x86-based Windows hosts"
 
   packages: 
     - path: ../platforms/macos/software/zoom.yml
