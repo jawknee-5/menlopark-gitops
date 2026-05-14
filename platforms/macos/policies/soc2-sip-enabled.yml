@@ -1,0 +1,8 @@
+- name: SOC 2 - System Integrity Protection enabled
+  query: SELECT 1 FROM sip_config WHERE config_flag = 'sip' AND enabled = 1;
+  critical: true
+  description: System Integrity Protection (SIP) prevents modification of protected files and processes, including by root. Disabling SIP allows malware persistence. SOC 2 CC6.8.
+  resolution: |
+    SIP can only be re-enabled by booting into Recovery (hold power on Apple Silicon, ⌘R on Intel), opening Terminal, running `csrutil enable`, then rebooting normally.
+  platform: darwin
+  webhooks_and_tickets_enabled: true

@@ -1,0 +1,15 @@
+- name: SOC 2 - Screensaver locks within 15 minutes
+  query: SELECT 1 FROM preferences WHERE domain = 'com.apple.screensaver' AND key = 'idleTime' AND CAST(value AS INTEGER) <= 900 AND CAST(value AS INTEGER) > 0;
+  critical: false
+  description: The screensaver must activate within 15 minutes of inactivity to limit unauthorized access to unattended workstations. SOC 2 CC6.1.
+  resolution: |
+    Enforced by the SOC 2 - Screensaver Lock configuration profile.
+  platform: darwin
+
+- name: SOC 2 - Password required immediately after screensaver
+  query: SELECT 1 FROM preferences WHERE domain = 'com.apple.screensaver' AND key = 'askForPassword' AND value = '1';
+  critical: true
+  description: A password must be required immediately when the screensaver activates or the system wakes from sleep. SOC 2 CC6.1.
+  resolution: |
+    Enforced by the SOC 2 - Screensaver Lock configuration profile.
+  platform: darwin

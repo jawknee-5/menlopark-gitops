@@ -1,0 +1,32 @@
+- name: SOC 2 - Remote login (SSH) disabled
+  query: SELECT 1 WHERE NOT EXISTS (SELECT 1 FROM launchd WHERE label = 'com.openssh.sshd' AND NOT disabled = 1);
+  critical: false
+  description: SSH (Remote Login) provides shell access over the network and must remain disabled on workstations unless explicitly approved. SOC 2 CC6.6.
+  resolution: |
+    System Settings > General > Sharing → turn off Remote Login. Or run `sudo systemsetup -setremotelogin off`.
+  platform: darwin
+  webhooks_and_tickets_enabled: true
+
+- name: SOC 2 - Screen Sharing disabled
+  query: SELECT 1 FROM launchd WHERE label = 'com.apple.screensharing' AND disabled = 1;
+  critical: false
+  description: Screen Sharing exposes the desktop over VNC and must be disabled on workstations. SOC 2 CC6.6.
+  resolution: |
+    System Settings > General > Sharing → turn off Screen Sharing.
+  platform: darwin
+
+- name: SOC 2 - File Sharing disabled
+  query: SELECT 1 FROM launchd WHERE label = 'com.apple.smbd' AND disabled = 1;
+  critical: false
+  description: SMB File Sharing exposes shares over the network and must be disabled on workstations. SOC 2 CC6.7.
+  resolution: |
+    System Settings > General > Sharing → turn off File Sharing.
+  platform: darwin
+
+- name: SOC 2 - Internet Sharing disabled
+  query: SELECT 1 WHERE NOT EXISTS (SELECT 1 FROM plist WHERE path = '/Library/Preferences/SystemConfiguration/com.apple.nat.plist' AND key = 'Enabled' AND value = '1');
+  critical: false
+  description: Internet Sharing turns the Mac into a NAT/router and can bridge networks in unintended ways. SOC 2 CC6.6.
+  resolution: |
+    System Settings > General > Sharing → turn off Internet Sharing.
+  platform: darwin

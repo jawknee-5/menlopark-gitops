@@ -1,0 +1,15 @@
+- name: SOC 2 - Automatic update check enabled
+  query: SELECT 1 FROM plist WHERE path = '/Library/Preferences/com.apple.SoftwareUpdate.plist' AND key = 'AutomaticCheckEnabled' AND value = 'true';
+  critical: false
+  description: Automatic checking for software updates must be enabled so security patches are surfaced promptly. SOC 2 CC7.1 (System Operations).
+  resolution: |
+    Enforced by the SOC 2 - Automatic Updates configuration profile. If failing, verify the profile is installed via `profiles list`.
+  platform: darwin
+
+- name: SOC 2 - Automatic security update install enabled
+  query: SELECT 1 FROM plist WHERE path = '/Library/Preferences/com.apple.SoftwareUpdate.plist' AND key = 'CriticalUpdateInstall' AND value = 'true';
+  critical: true
+  description: Critical/security updates must be installed automatically to limit the window of exposure on disclosed vulnerabilities. SOC 2 CC7.1.
+  resolution: |
+    Enforced by the SOC 2 - Automatic Updates configuration profile.
+  platform: darwin

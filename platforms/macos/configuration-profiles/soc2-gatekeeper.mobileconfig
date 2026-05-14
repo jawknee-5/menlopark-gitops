@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Enables Gatekeeper and restricts app execution to identified developers. SOC 2 CC6.8 / CIS 2.6.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Gatekeeper</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.gatekeeper</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>6D9F0A2C-D5E7-4B1D-F4A6-C05B8E9F0288</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.systempolicy.control</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.gatekeeper.payload</string>
+			<key>PayloadUUID</key>
+			<string>7E0A1B3D-E6F8-4C2E-A5B7-D16C9F0A1399</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Gatekeeper</string>
+			<key>EnableAssessment</key>
+			<true/>
+			<key>AllowIdentifiedDevelopers</key>
+			<true/>
+			<key>DisableOverride</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

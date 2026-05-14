@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Enforces network time sync against time.apple.com for accurate audit log timestamps. SOC 2 CC7.2 (Monitoring) / CIS 2.2.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Network Time Server</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.timeServer</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>4F71820E-5D0F-4395-1C2E-48E306172830</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.MCX</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.timeServer.payload</string>
+			<key>PayloadUUID</key>
+			<string>50829310-6E1A-44A6-2D3F-59F417283941</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Time Server</string>
+			<key>timeServer</key>
+			<string>time.apple.com</string>
+			<key>TimeZone</key>
+			<string>America/Los_Angeles</string>
+		</dict>
+	</array>
+</dict>
+</plist>

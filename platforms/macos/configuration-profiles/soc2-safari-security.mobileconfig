@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Hardens Safari: blocks autofill of passwords, enables fraudulent site warnings, blocks pop-ups, enables Do Not Track. SOC 2 CC6.6 / CIS 6.x.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Safari Security</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.safariSecurity</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>2D5F608C-3BED-4173-FA0C-26C1E4F506EE</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.Safari</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.safariSecurity.payload</string>
+			<key>PayloadUUID</key>
+			<string>3E60719D-4CFE-4284-0B1D-37D2F50617FF</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Safari Preferences</string>
+			<key>AutoFillPasswords</key>
+			<false/>
+			<key>AutoFillCreditCardData</key>
+			<false/>
+			<key>AutoOpenSafeDownloads</key>
+			<false/>
+			<key>WarnAboutFraudulentWebsites</key>
+			<true/>
+			<key>WebKitJavaScriptCanOpenWindowsAutomatically</key>
+			<false/>
+			<key>SendDoNotTrackHTTPHeader</key>
+			<true/>
+			<key>BlockStoragePolicy</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+- name: SOC 2 - FileVault disk encryption enabled
+  query: SELECT 1 FROM disk_encryption WHERE user_uuid IS NOT "" AND filevault_status = 'on' LIMIT 1;
+  critical: true
+  description: FileVault full-disk encryption must be enabled on all Macs to protect data at rest. Required by SOC 2 CC6.1 (Logical Access) and CC6.7 (Data Transmission and Disposal).
+  resolution: |
+    Enable FileVault via System Settings > Privacy & Security > FileVault. If managed by Fleet, the disk encryption profile should auto-enforce this; reboot and complete the FileVault prompt at next login.
+  platform: darwin
+  webhooks_and_tickets_enabled: true

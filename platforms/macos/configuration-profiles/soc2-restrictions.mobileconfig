@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Restricts AirDrop, AirPlay receiver, iCloud document sync, and prevents pairing of unmanaged Apple Watches. SOC 2 CC6.7 (Data Transmission Controls) / CIS 2.x.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Restrictions</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.restrictions</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>0B3D4E6A-19CB-4F51-D8EA-04AFC2D3E4CC</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.applicationaccess</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.restrictions.payload</string>
+			<key>PayloadUUID</key>
+			<string>1C4E5F7B-2ADC-4062-E9FB-15B0D3E4F5DD</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Restrictions</string>
+			<key>allowAirDrop</key>
+			<false/>
+			<key>allowAirPlayIncomingRequests</key>
+			<false/>
+			<key>allowCloudDocumentSync</key>
+			<false/>
+			<key>allowCloudDesktopAndDocuments</key>
+			<false/>
+			<key>allowCloudKeychainSync</key>
+			<true/>
+			<key>allowEraseContentAndSettings</key>
+			<false/>
+			<key>allowPasswordAutoFill</key>
+			<false/>
+			<key>allowPasswordSharing</key>
+			<false/>
+			<key>allowPasswordProximityRequests</key>
+			<false/>
+			<key>forceAuthenticationBeforeAutoFill</key>
+			<true/>
+		</dict>
+	</array>
+</dict>
+</plist>

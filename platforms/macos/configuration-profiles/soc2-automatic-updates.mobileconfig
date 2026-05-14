@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Enables automatic checking, downloading, and installation of OS and security updates. SOC 2 CC7.1 / CIS 1.x.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Automatic Updates</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.automaticUpdates</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>8F1B2C4E-F7A9-4D3F-B6C8-E27DA0B1C2AA</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.SoftwareUpdate</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.automaticUpdates.payload</string>
+			<key>PayloadUUID</key>
+			<string>9A2C3D5F-08BA-4E40-C7D9-F38EB1C2D3BB</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Software Update</string>
+			<key>AutomaticCheckEnabled</key>
+			<true/>
+			<key>AutomaticDownload</key>
+			<true/>
+			<key>AutomaticallyInstallAppUpdates</key>
+			<true/>
+			<key>AutomaticallyInstallMacOSUpdates</key>
+			<true/>
+			<key>ConfigDataInstall</key>
+			<true/>
+			<key>CriticalUpdateInstall</key>
+			<true/>
+			<key>RestrictedSoftwareUpdateMajorOSDeferredInstallDelay</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+</dict>
+</plist>

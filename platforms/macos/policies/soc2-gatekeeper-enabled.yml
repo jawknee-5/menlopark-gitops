@@ -1,0 +1,8 @@
+- name: SOC 2 - Gatekeeper enabled
+  query: SELECT 1 FROM gatekeeper WHERE assessments_enabled = 1;
+  critical: true
+  description: Gatekeeper must be enabled to ensure only signed, notarized applications from identified developers are allowed to run. SOC 2 CC6.8 (Prevention of Unauthorized Software).
+  resolution: |
+    Run `sudo spctl --master-enable` in Terminal, or enable via System Settings > Privacy & Security > Allow applications downloaded from. Enforced by the SOC 2 - Gatekeeper configuration profile.
+  platform: darwin
+  webhooks_and_tickets_enabled: true

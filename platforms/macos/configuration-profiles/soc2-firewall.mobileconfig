@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDescription</key>
+	<string>Enables the application firewall and stealth mode. SOC 2 CC6.6 (Network Security) / CIS 3.6.</string>
+	<key>PayloadDisplayName</key>
+	<string>SOC 2 - Application Firewall</string>
+	<key>PayloadEnabled</key>
+	<true/>
+	<key>PayloadIdentifier</key>
+	<string>com.menlopark.soc2.firewall</string>
+	<key>PayloadScope</key>
+	<string>System</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>4B7D8E0A-B3C5-4F9B-D2E4-AE3F6C7D8066</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadRemovalDisallowed</key>
+	<true/>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadType</key>
+			<string>com.apple.security.firewall</string>
+			<key>PayloadIdentifier</key>
+			<string>com.menlopark.soc2.firewall.payload</string>
+			<key>PayloadUUID</key>
+			<string>5C8E9F1B-C4D6-4A0C-E3F5-BF4A7D8E9177</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadDisplayName</key>
+			<string>Firewall</string>
+			<key>EnableFirewall</key>
+			<true/>
+			<key>EnableStealthMode</key>
+			<true/>
+			<key>EnableLogging</key>
+			<true/>
+			<key>LoggingOption</key>
+			<string>detail</string>
+			<key>BlockAllIncoming</key>
+			<false/>
+			<key>EnableFirewallSubmenu</key>
+			<false/>
+		</dict>
+	</array>
+</dict>
+</plist>

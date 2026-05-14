@@ -1,0 +1,16 @@
+- name: SOC 2 - Application firewall enabled
+  query: SELECT 1 FROM alf WHERE global_state >= 1;
+  critical: true
+  description: The built-in macOS application firewall must be enabled to restrict inbound connections to authorized services. SOC 2 CC6.6 (Logical Access - Network Security).
+  resolution: |
+    Enable the firewall via System Settings > Network > Firewall. The SOC 2 - Application Firewall configuration profile should enforce this automatically.
+  platform: darwin
+  webhooks_and_tickets_enabled: true
+
+- name: SOC 2 - Firewall stealth mode enabled
+  query: SELECT 1 FROM alf WHERE stealth_enabled = 1;
+  critical: false
+  description: Stealth mode prevents the Mac from responding to ICMP probes and connection attempts on closed ports, reducing reconnaissance surface. SOC 2 CC6.6.
+  resolution: |
+    Enable stealth mode via System Settings > Network > Firewall > Options. Enforced automatically by the SOC 2 - Application Firewall configuration profile.
+  platform: darwin

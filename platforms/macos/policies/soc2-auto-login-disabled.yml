@@ -1,0 +1,8 @@
+- name: SOC 2 - Automatic login at boot disabled
+  query: SELECT 1 WHERE NOT EXISTS (SELECT 1 FROM plist WHERE path = '/Library/Preferences/com.apple.loginwindow.plist' AND key = 'autoLoginUser');
+  critical: true
+  description: Automatic login bypasses user authentication at boot. It must be disabled so physical access alone does not grant logical access. SOC 2 CC6.1.
+  resolution: |
+    Open System Settings > Users & Groups > Automatic login as → Off. Then verify the `autoLoginUser` key is removed from /Library/Preferences/com.apple.loginwindow.plist.
+  platform: darwin
+  webhooks_and_tickets_enabled: true
